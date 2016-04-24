@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/javawc-code.iml" filepath="$PROJECT_DIR$/javawc-code.iml" />
+      <module fileurl="file://$PROJECT_DIR$/javawc-code-api/javawc-code-api.iml" filepath="$PROJECT_DIR$/javawc-code-api/javawc-code-api.iml" />
+      <module fileurl="file://$PROJECT_DIR$/javawc-code-dao/javawc-code-dao.iml" filepath="$PROJECT_DIR$/javawc-code-dao/javawc-code-dao.iml" />
+      <module fileurl="file://$PROJECT_DIR$/javawc-code-domain/javawc-code-domain.iml" filepath="$PROJECT_DIR$/javawc-code-domain/javawc-code-domain.iml" />
+      <module fileurl="file://$PROJECT_DIR$/javawc-code-rpc/javawc-code-rpc.iml" filepath="$PROJECT_DIR$/javawc-code-rpc/javawc-code-rpc.iml" />
+      <module fileurl="file://$PROJECT_DIR$/javawc-code-service/javawc-code-service.iml" filepath="$PROJECT_DIR$/javawc-code-service/javawc-code-service.iml" />
+      <module fileurl="file://$PROJECT_DIR$/javawc-code-web/javawc-code-web.iml" filepath="$PROJECT_DIR$/javawc-code-web/javawc-code-web.iml" />
+    </modules>
+  </component>
+</project>

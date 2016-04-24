@@ -1,0 +1,94 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE log4j:configuration SYSTEM "log4j.dtd">
+
+<log4j:configuration xmlns:log4j="http://jakarta.apache.org/log4j/">
+
+  <appender name="CONSOLE" class="org.apache.log4j.ConsoleAppender">
+    <layout class="org.apache.log4j.PatternLayout">
+      <param name="ConversionPattern" value="[%p] %c,%d{yyyy-MM-dd HH:mm:ss,SSS},%m%n"/>
+    </layout>
+  </appender>
+
+  <appender name="DEBUG_FILE_LOG" class="org.apache.log4j.RollingFileAppender">
+    <param name="append" value="true"/>
+    <param name="encoding" value="UTF-8"/>
+    <param name="file" value="F:/Log/javawc-web-debug.log"/>
+    <param name="MaxFileSize" value="100MB"/>
+    <param name="MaxBackupIndex" value="10000"/>
+    <layout class="org.apache.log4j.PatternLayout">
+      <param name="ConversionPattern"
+             value="[%p] %c,%d{yyyy-MM-dd HH:mm:ss,SSS},%m%n"/>
+    </layout>
+    <filter class="org.apache.log4j.varia.LevelRangeFilter">
+      <param name="LevelMin" value="DEBUG"/>
+    </filter>
+  </appender>
+
+  <appender name="ERROR_FILE_LOG" class="org.apache.log4j.RollingFileAppender">
+    <param name="append" value="true"/>
+    <param name="encoding" value="UTF-8"/>
+    <param name="file" value="F:/Log/javawc-web-error.log"/>
+    <param name="MaxFileSize" value="100MB"/>
+    <param name="MaxBackupIndex" value="1000"/>
+    <layout class="org.apache.log4j.PatternLayout">
+      <param name="ConversionPattern"
+             value="[%p] %c,%d{yyyy-MM-dd HH:mm:ss,SSS},%m%n"/>
+    </layout>
+    <filter class="org.apache.log4j.varia.LevelRangeFilter">
+      <param name="LevelMin" value="DEBUG"/>
+    </filter>
+  </appender>
+
+  <logger name="java.sql" additivity="true">
+    <level value="DEBUG"/>
+    <appender-ref ref="CONSOLE"/>
+  </logger>
+
+  <logger name="java.sql.Statement" additivity="true">
+    <level value="DEBUG"/>
+    <appender-ref ref="CONSOLE"/>
+  </logger>
+  <logger name="java.sql.PreparedStatement" additivity="true">
+    <level value="DEBUG"/>
+    <appender-ref ref="CONSOLE"/>
+  </logger>
+  <logger name="java.sql.ResultSet" additivity="true">
+    <level value="DEBUG"/>
+    <appender-ref ref="CONSOLE"/>
+  </logger>
+  <logger name="java.sql.Connection" additivity="true">
+    <level value="DEBUG"/>
+    <appender-ref ref="CONSOLE"/>
+  </logger>
+
+  <logger name="java.lang.SecurityException">
+    <level value="DEBUG"/>
+    <appender-ref ref="CONSOLE"/>
+  </logger>
+
+  <logger name="org.springframework" additivity="true">
+    <level value="DEBUG"/>
+    <appender-ref ref="CONSOLE"/>
+  </logger>
+
+  <logger name="org.apache.ibatis" additivity="true">
+    <level value="DEBUG"/>
+    <appender-ref ref="CONSOLE"/>
+  </logger>
+
+  <!--OFF-->
+  <category name="org.apache" additivity="true">
+    <priority value="ON"/>
+  </category>
+
+  <category name="com.jd.service" additivity="true">
+    <priority value="DEBUG"/>
+  </category>
+
+  <root>
+    <priority value="DEBUG"/>
+    <appender-ref ref="ERROR_FILE_LOG"/>
+    <appender-ref ref="DEBUG_FILE_LOG"/>
+    <appender-ref ref="CONSOLE"/>
+  </root>
+</log4j:configuration>

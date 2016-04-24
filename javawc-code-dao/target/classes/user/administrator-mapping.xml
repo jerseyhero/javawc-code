@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+
+<mapper namespace="administrator">
+	<resultMap type="com.javawc.code.web.controller.code.domain.user.Administrator" id="administratorMap">
+		<result column="id" 				property="id" 				jdbcType="BIGINT" 	javaType="Long" />
+		<result column="user_id" 		property="userId" 		jdbcType="BIGINT" 	javaType="Long"/>
+		<result column="name" 			property="name" 		jdbcType="VARCHAR" 	javaType="String"/>
+		<result column="signature" 			property="signature" 			jdbcType="VARCHAR" 	javaType="String"/>
+		<result column="level" 		property="level" 		jdbcType="INTEGER" 	javaType="java.lang.Integer"/>
+		<result column="exp" 		property="exp" 			jdbcType="BIGINT" 	javaType="Long"/>
+		<result column="gender" 		property="gender" 		jdbcType="INTEGER" 	javaType="java.lang.Integer"/>
+		<result column="birthday"				property="birthday"			jdbcType="TIMESTAMP"  javaType="java.util.Date" />
+		<result column="phone"				property="phone"			jdbcType="VARCHAR"  javaType="String" />
+		<result column="login_name"				property="loginName"			jdbcType="VARCHAR"  javaType="String" />
+		<result column="pass_word"				property="passWord"			jdbcType="VARCHAR"  javaType="String" />
+		<result column="email"				property="email"			jdbcType="VARCHAR"  javaType="String" />
+		<result column="create_time"				property="createTime"			jdbcType="TIMESTAMP"  javaType="java.util.Date" />
+		<result column="money"				property="money"			jdbcType="BIGINT"  javaType="Long" />
+		<result column="type"				property="type"			jdbcType="INTEGER"  javaType="java.lang.Integer" />
+		<result column="valid_start_date"				property="validStartDate"			jdbcType="TIMESTAMP"  javaType="java.util.Date" />
+		<result column="valid_end_date"				property="validEndDate"			jdbcType="TIMESTAMP"  javaType="java.util.Date" />
+		<result column="super_pass_word"				property="superPassWord"			jdbcType="VARCHAR"  javaType="String" />
+	</resultMap>
+	
+
+	
+	<insert id="insertUser" parameterType="com.javawc.code.web.controller.code.domain.user.Administrator">
+		INSERT INTO javawc_administrator_user(user_id,name,signature,level,exp,gender,birthday,phone,login_name,pass_word,email,create_time,money,type,valid_start_date,valid_end_date,super_pass_word)
+		                               VALUES (#{userId},#{name},#{signature},0,5,#{gender},#{birthday},#{phone},#{loginName},#{passWord},#{email},now(),0,10,now(),'2019-10-01 00:00:00',#{superPassWord})
+	</insert>
+
+
+		
+</mapper>

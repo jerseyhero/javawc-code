@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="javawc-code-web:war">
+    <output-path>$PROJECT_DIR$/javawc-code-web/target</output-path>
+    <root id="archive" name="o2o-lp-settlement-web.war">
+      <element id="artifact" artifact-name="javawc-code-web:war exploded" />
+    </root>
+  </artifact>
+</component>
